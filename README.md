@@ -28,7 +28,7 @@
 
 Run: `npm cache clear && npm i`
 
-*Note: Before you can install Web Start Kit dependencies, you will need to install [Gulp](http://gulpjs.com/), [Node](https://nodejs.org/), and [NPM](https://www.npmjs.com/).*
+*Note: Before you can install Web Start Kit dependencies, you will need to install [Gulp](http://gulpjs.com/), [Node](https://nodejs.org/), [NPM](https://www.npmjs.com/), and [Mamp](https://www.mamp.info/en/) (or any other server for PHP).*
 
 ---
 
