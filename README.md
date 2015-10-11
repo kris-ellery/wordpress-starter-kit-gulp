@@ -38,7 +38,7 @@ You have to install WordPress inside `./build` directory and create a local MySQ
 
 ## Build
 
-This task will generate a fresh build of your project. It will run several individual tasks on files within `./source` and then output them to `./build/wp-content/themes/{custom-name}.
+This task will generate a fresh build of your project. It will run several individual tasks on files within `./source` and then output them to `./build/wp-content/themes/{custom-name}`.
 
 Run: `gulp build`
 
