@@ -1,0 +1,43 @@
+{
+  "name": "gulp-wordpress-theme",
+  "title": "Gulp WordPress Theme",
+  "description": "Gulp WordPress Theme",
+  "version": "0.0.1",
+  "homepage": "http://www.domain.com",
+  "author": {
+    "name": "Author",
+    "url": "http://www.domain.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@bitbucket.org:USER/REPOSITORY.git"
+  },
+  "devDependencies": {
+    "browser-sync": "*",
+    "del": "*",
+    "gulp": "*",
+    "gulp-autoprefixer": "*",
+    "gulp-changed": "*",
+    "gulp-combine-mq": "*",
+    "gulp-copy": "*",
+    "gulp-csscomb": "*",
+    "gulp-header": "*",
+    "gulp-imagemin": "*",
+    "gulp-include": "*",
+    "gulp-jscs": "*",
+    "gulp-jshint": "*",
+    "gulp-minify-css": "*",
+    "gulp-plumber": "*",
+    "gulp-rename": "*",
+    "gulp-replace": "*",
+    "gulp-sass": "*",
+    "gulp-scss-lint": "*",
+    "gulp-uglify": "*",
+    "gulp-util": "*",
+    "gulp-watch": "*",
+    "jshint-stylish": "*",
+    "moment": "*",
+    "require-dir": "*",
+    "run-sequence": "*"
+  }
+}

@@ -1,0 +1,18 @@
+////
+/// Global functions
+/// @group Global
+/// @author Kris Olszewski <kris.olszewski@publicishawkeye.com>
+////
+
+/// Get value from a map
+/// ---
+/// @param {String} $map - Map
+/// @param {Arglist} $keys - Keys
+/// @return {Any} - Value
+
+@function get-value($map, $keys...) {
+  @each $key in $keys {
+    $map: map-get($map, $key);
+  }
+  @return $map;
+}
