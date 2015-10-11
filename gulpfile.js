@@ -5,9 +5,6 @@
 
 'use strict';
 
-// Constants
-var THEME_NAME = "custom-theme";
-
 // Dependencies
 var gulp         = require('gulp');
 var plumber      = require('gulp-plumber');
@@ -28,14 +25,27 @@ var minifyCss    = require('gulp-minify-css');
 var include      = require('gulp-include');
 var rename       = require('gulp-rename');
 var header       = require('gulp-header');
-var moment       = require('moment');
 var jscs         = require('gulp-jscs');
 var jshint       = require('gulp-jshint');
 var stylish      = require('jshint-stylish');
 var uglify       = require('gulp-uglify');
 var jshintConfig = require('./_js-lint.json');
 var pkg          = require('./package.json');
-var banner       = '/*! <%= pkg.title %> | <%= moment().format("MMMM Do YYYY, h:mm:ss A") %> */\n';
+var banner = [
+  '/**',
+  ' * Theme Name: <%= pkg.title %>',
+  ' * Theme URI: <%= pkg.homepage %>',
+  ' * Author: <%= pkg.author.name %>',
+  ' * Author URI: <%= pkg.author.url %>',
+  ' * Description: <%= pkg.description %>',
+  ' * Version: <%= pkg.version %>',
+  ' * License: <%= pkg.license %>',
+  ' */',
+  '\n'
+].join('\n');
+
+// Constants
+var THEME_NAME = pkg.name;
 
 /**
  * Error handling
@@ -131,6 +141,7 @@ gulp.task('assets', function(cb) {
     [ 'images' ],
     [ 'media' ],
     [ 'misc' ],
+    [ 'meta' ],
     [ 'vendors' ],
     cb
   );
@@ -155,7 +166,7 @@ gulp.task('images', function () {
     .src('./source/images/**/*')
     .pipe(changed('./build/wp-content/themes/' + THEME_NAME + '/images'))
     .pipe(imagemin({
-      optimizationLevel: 4,
+      optimizationLevel: 3,
       progressive: true,
       svgoPlugins: [{
         removeViewBox: false
@@ -175,6 +186,15 @@ gulp.task('misc', function() {
   return gulp
     .src('./source/misc/**/*', { dot: true })
     .pipe(changed('./build/wp-content/themes/' + THEME_NAME))
+    .pipe(gulp.dest('./build/wp-content/themes/' + THEME_NAME));
+});
+
+gulp.task('meta', function() {
+  return gulp
+    .src('./build/wp-content/themes/' + THEME_NAME + '/style.css')
+    .pipe(header(banner, {
+      pkg: pkg
+    }))
     .pipe(gulp.dest('./build/wp-content/themes/' + THEME_NAME));
 });
 
@@ -200,8 +220,7 @@ gulp.task('scripts', function() {
     .pipe(jshint(jshintConfig))
     .pipe(jshint.reporter(stylish))
     .pipe(header(banner, {
-      pkg: pkg,
-      moment: moment
+      pkg: pkg
     }))
     .pipe(gulp.dest('./build/wp-content/themes/' + THEME_NAME + '/scripts'))
     .pipe(uglify({
@@ -247,8 +266,7 @@ gulp.task('styles-build', function() {
       configPath: './_css-comb.json'
     }))
     .pipe(header(banner, {
-      pkg: pkg,
-      moment: moment
+      pkg: pkg
     }))
     .pipe(gulp.dest('./build/wp-content/themes/' + THEME_NAME + '/styles'))
     .pipe(combineMq())

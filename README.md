@@ -4,21 +4,23 @@
 
 * Dependencies
 * WordPress
-* Build
-* Server
-* Assets
+* Meta Information
+* Default Task
+* Build Task
+* Server Task
+* Assets Task
     * Data
     * Fonts
     * Images
     * Media
     * Miscellaneous
     * Vendors
-* Scripts
+* Scripts Task
     * Style Guide
-* Styles
+* Styles Task
     * Structure
     * Style Guide
-* Views
+* Views Task
 
 ---
 
@@ -36,7 +38,21 @@ You have to install WordPress inside `./build` directory and create a local MySQ
 
 ---
 
-## Build
+## Meta Information
+
+Open `./package.json` file and set your project details (`name`, `description`, `version`, `author`, etc.). This information will be used to set your theme directory and CSS/JS headers.
+
+---
+
+## Default Task
+
+This task will run `build` and `server` tasks.
+
+Run: `gulp`
+
+---
+
+## Build Task
 
 This task will generate a fresh build of your project. It will run several individual tasks on files within `./source` and then output them to `./build/wp-content/themes/{custom-name}`.
 
@@ -44,7 +60,7 @@ Run: `gulp build`
 
 ---
 
-## Server
+## Server Task
 
 This task will start a local Node server for development purposes. Mamp URL must match proxy in `./server.js`. By default it's set to `http://localhost:8888/`. Also, Mamp needs to point to `./build` directory (WordPress root).
 
@@ -52,7 +68,7 @@ Run: `gulp server`
 
 ---
 
-## Assets
+## Assets Task
 
 This task will run several individual sub-tasks to copy static files from `./source` to `./build/wp-content/themes/{custom-name}`.
 
@@ -88,6 +104,12 @@ This task will copy miscellaneous WordPress files, such as `style.css` or `scree
 
 Run: `gulp misc`
 
+### Meta
+
+This task will add meta information to default `style.css`. You can set meta information in `./package.json` file.
+
+Run: `gulp meta`
+
 ### Vendors
 
 This task will copy vendor files to `./build/wp-content/themes/{custom-name}/vendors`.
@@ -96,18 +118,18 @@ Run: `gulp vendors`
 
 ---
 
-## Scripts
+## Scripts Task
 
 This task will perform a series of sub-tasks to generate final JavaScript files.
 
 * Select root files only from `./source/scripts`
 * Include files
-* Check for JavaScript style guide errors
-* Check for JavaScript errors
-* Add meta data banner
-* Save unminified JavaScript file
-* Minify JavaScript
-* Save minified JavaScript file
+* Check for style guide errors
+* Check for errors
+* Add meta information banner
+* Save unminified file
+* Minify and optimize
+* Save minified file
 
 *Note: Each file on the root of `./source/scripts` will be compiled to its own file in `./build/scripts`. Each file can have own includes, just like Sass with `@import` functionality. See `./source/scripts/main.js` as an example.*
 
@@ -119,21 +141,21 @@ Your JavaScript should adhere to most reasonable, yet opinionated, style guide. 
 
 ---
 
-## Styles
+## Styles Task
 
 This task will perform a series of sub-tasks to generate final CSS files.
 
 * Select all files from `./source/styles`
-* Check for Sass style guide errors
+* Check for style guide errors
 * Select root files only from `./source/styles`
 * Compile Sass to CSS
 * Add vendor prefixes
 * Order CSS declarations
 * Add meta data banner
-* Save unminified CSS file
+* Save unminified file
 * Combine media queries
-* Minify CSS
-* Saved minified CSS file
+* Minify and optimize
+* Saved minified file
 
 *Note: Each file on the root of `./source/styles` will be compiled to its own file in `./build/styles`.*
 
@@ -151,7 +173,7 @@ Your Sass should adhere to most reasonable, yet opinionated, style guide. If you
 
 ---
 
-## Views
+## Views Task
 
 This task will copy PHP files.
 

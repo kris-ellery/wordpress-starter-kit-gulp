@@ -1,17 +1,18 @@
 {
-  "name": "gulp-wordpress-theme",
-  "title": "Gulp WordPress Theme",
-  "description": "Gulp WordPress Theme",
-  "version": "0.0.1",
-  "homepage": "http://www.domain.com",
+  "name": "wordpress-theme-name",
+  "title": "WordPress Theme Name",
+  "description": "WordPress Theme Description",
+  "version": "1.0.0",
+  "homepage": "http://www.theme-url.com",
   "author": {
-    "name": "Author",
-    "url": "http://www.domain.com"
+    "name": "Author Name",
+    "url": "http://www.author-url.com"
   },
   "repository": {
     "type": "git",
-    "url": "git@bitbucket.org:USER/REPOSITORY.git"
+    "url": "git@github.com:USER/REPOSITORY.git"
   },
+  "license": "MIT",
   "devDependencies": {
     "browser-sync": "*",
     "del": "*",
@@ -36,7 +37,6 @@
     "gulp-util": "*",
     "gulp-watch": "*",
     "jshint-stylish": "*",
-    "moment": "*",
     "require-dir": "*",
     "run-sequence": "*"
   }
