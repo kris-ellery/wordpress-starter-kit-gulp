@@ -35,7 +35,7 @@
       this.$win = $(window);
       this.$html = $('html');
 
-    }, // cache()
+    }, // _cache()
 
     /**
      * Attach event listeners
@@ -56,7 +56,7 @@
         this.myResizeHandler.bind(this)
       );
 
-    }, // bind()
+    }, // _events()
 
     /**
      * Handle click event
