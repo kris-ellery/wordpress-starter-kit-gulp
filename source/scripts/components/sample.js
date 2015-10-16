@@ -19,8 +19,8 @@
 
     init: function() {
 
-      this.cache();
-      this.bind();
+      this._cache();
+      this._events();
 
     }, // init()
 
