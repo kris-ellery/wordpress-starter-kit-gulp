@@ -26,11 +26,11 @@
 
     /**
      * Cache reusable data
-     * @function cache
+     * @function _cache
      * @memberof MyNamespace
      */
 
-    cache: function() {
+    _cache: function() {
 
       this.$win = $(window);
       this.$html = $('html');
@@ -39,23 +39,21 @@
 
     /**
      * Attach event listeners
-     * @function bind
+     * @function _events
      * @memberof MyNamespace
      */
 
-    bind: function() {
+    _events: function() {
 
-      var _this = this;
-
-      _this.$html.on(
-        'click.ui.some_namespace',
+      this.$html.on(
+        'click.component.MyNamespace',
         '.js-trigger',
-        _this.myClickHandler
+        this.myClickHandler.bind(this)
       );
 
-      _this.$win.on(
-        'resize.ui.some_namespace',
-        _this.myResizeHandler
+      this.$win.on(
+        'resize.component.MyNamespace',
+        this.myResizeHandler.bind(this)
       );
 
     }, // bind()
