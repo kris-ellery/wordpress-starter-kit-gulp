@@ -3,21 +3,21 @@
   'use strict';
 
   /**
-   * This is the description for my namespace object.
+   * This is a description for MyNamespace object.
    *
    * @namespace MyNamespace
    * @author Ultron
    */
 
-  var MyNamespace = {
+  let MyNamespace = {
 
     /**
-     * Initialize namespace object
+     * Initialize object
      * @function init
      * @memberof MyNamespace
      */
 
-    init: function() {
+    init() {
 
       this._cache();
       this._events();
@@ -26,11 +26,11 @@
 
     /**
      * Cache reusable data
-     * @function _cache
+     * @function cache
      * @memberof MyNamespace
      */
 
-    _cache: function() {
+    _cache() {
 
       this.$win = $(window);
       this.$html = $('html');
@@ -43,40 +43,40 @@
      * @memberof MyNamespace
      */
 
-    _events: function() {
+    _events() {
 
       this.$html.on(
-        'click.component.MyNamespace',
+        'click.ui.some_namespace',
         '.js-trigger',
-        this.myClickHandler.bind(this)
+        event => this._myClickHandler(event)
       );
 
       this.$win.on(
-        'resize.component.MyNamespace',
-        this.myResizeHandler.bind(this)
+        'resize.ui.some_namespace',
+        event => this._myResizeHandler(event)
       );
 
     }, // _events()
 
     /**
      * Handle click event
-     * @function myClickHandler
+     * @function _myClickHandler
      * @memberof MyNamespace
      */
 
-    myClickHandler: function() {
-
-    }, // myClickHandler()
+    _myClickHandler() {
+      console.log('Click handler');
+    }, // _myClickHandler()
 
     /**
      * Handle `window` resize event
-     * @function myResizeHandler
+     * @function _myResizeHandler
      * @memberof MyNamespace
      */
 
-    myResizeHandler: function() {
-
-    } // myResizeHandler()
+    _myResizeHandler() {
+      console.log('Resize handler');
+    }, // _myResizeHandler()
 
   }; // MyNamespace
 

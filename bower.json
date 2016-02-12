@@ -1,0 +1,6 @@
+{
+  "name": "wordpress-theme-name",
+  "dependencies": {
+    "jquery": "~2.2.0"
+  }
+}
