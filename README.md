@@ -1,4 +1,8 @@
-# WordPress Theme
+# WordPress Theme Starter Kit with Gulp
+
+WordPress Theme Starter Kit is an opinionated build automation for front-end web development based on [Gulp](http://gulpjs.com/), [Node](https://nodejs.org/), [NPM](https://www.npmjs.com/), [Bower](http://bower.io/), [Babel](https://babeljs.io/), and [Sass](http://sass-lang.com/).
+
+*Note: WordPress Theme Starter Kit is simply a guideline and it doesn't solve everything. It is up to you to modify whatever necessary to achieve your project goals.*
 
 ## Table of Contents
 
@@ -27,7 +31,7 @@
 
 Run: `npm cache clear && npm i && bower cache clean && bower install`
 
-*Note: Before you can install Web Start Kit dependencies, you will need to install [Gulp](http://gulpjs.com/), [Node](https://nodejs.org/), [NPM](https://www.npmjs.com/), and [Bower](http://bower.io/).*
+*Note: Before you can install WordPress Theme Starter Kit dependencies, you will need to install [Gulp](http://gulpjs.com/), [Node](https://nodejs.org/), [NPM](https://www.npmjs.com/), and [Bower](http://bower.io/).*
 
 ---
 
@@ -87,7 +91,7 @@ Run: `gulp fonts`
 
 ## Images
 
-Copy images to `./build/wp-content/themes/{custom-name}/images`. As a personal preference Web Starter Kit doesn't use automated image optimization. It is strongly recommended to use services like [TinyPNG](https://tinypng.com/) and [TinyJPG](https://tinyjpg.com/) to optimize images manually.
+Copy images to `./build/wp-content/themes/{custom-name}/images`. As a personal preference WordPress Theme Starter Kit doesn't use automated image optimization. It is strongly recommended to use services like [TinyPNG](https://tinypng.com/) and [TinyJPG](https://tinyjpg.com/) to optimize images manually.
 
 Run: `gulp images`
 
@@ -111,7 +115,7 @@ Run: `gulp meta`
 
 ### Vendors
 
-Bundle vendor files to `./build/wp-content/themes/{custom-name}/vendors`. You can install new client-side vendors using Bower, then reference appropriate files in `./src/vendors/bundle.js` and `./src/vendors/bundle.min.js`. Web Starter Kit comes with jQuery example.
+Bundle vendor files to `./build/wp-content/themes/{custom-name}/vendors`. You can install new client-side vendors using Bower, then reference appropriate files in `./src/vendors/bundle.js` and `./src/vendors/bundle.min.js`. WordPress Theme Starter Kit comes with jQuery example.
 
 Run: `gulp vendors`
 
@@ -137,7 +141,7 @@ Run: `gulp styles`
 
 ### BEM Structure
 
-Web Starter Kit follows a strict naming convention using [BEM](https://en.bem.info/) methodology.
+WordPress Theme Starter Kit follows a strict naming convention using [BEM](https://en.bem.info/) methodology.
 
 Directory structure and selector names are divided into namespaces based on [More Transparent UI Code with Namespaces](http://csswizardry.com/2015/03/more-transparent-ui-code-with-namespaces/) article by Harry Roberts.
 
