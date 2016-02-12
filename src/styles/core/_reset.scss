@@ -1,13 +1,14 @@
 /**
- * Reset
- * --------------------------------------------------
+ * Core: Reset
+ * -----------------------------------------------------------------------------
  */
 
-// scss-lint:disable SelectorFormat, SingleLinePerSelector
 html {
   box-sizing: border-box;
-  font-family: sans-serif;
-  font-size: 62.5%; // 1rem = 10px
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: transparent;
@@ -17,7 +18,7 @@ html {
   &,
   &:before,
   &:after {
-    box-sizing: border-box;
+    box-sizing: inherit;
   }
 }
 
@@ -53,4 +54,3 @@ img {
   max-width: 100%;
   vertical-align: top;
 }
-// scss-lint:lint:enable SelectorFormat, SingleLinePerSelector
