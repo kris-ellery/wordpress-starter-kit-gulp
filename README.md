@@ -145,8 +145,6 @@ Directory structure and selector names are divided into namespaces based on [Mor
 
 ## Views Task
 
-Copy PHP files.
-
-* Copy PHP files to `./build/wp-content/themes/{custom-name}`
+Copy PHP files to `./build/wp-content/themes/{custom-name}`
 
 Run: `gulp views`
